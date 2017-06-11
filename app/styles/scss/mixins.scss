@@ -1,0 +1,5 @@
+@mixin grid($blockcolor, $linecolor, $linewidth, $linespread) {
+  $spread: ($linewidth + $linespread) / 2;
+  background-color: $blockcolor;
+  background-image: linear-gradient(0deg, transparent 0px, $linecolor $linewidth, transparent $spread), linear-gradient(90deg, transparent 0px, $linecolor $linewidth, transparent $spread);
+}

@@ -1,0 +1,200 @@
+MASTHEAD
+
+ - Logo
+ - Menu
+
+1. Intro image/slider
+2. Overview/about
+   - intro text
+   - image
+   - dob, address etc.
+   - social/github/stack overflow?
+3. What do I do and what am I good at?
+
+4. Skills / Toolkit
+
+5. Resume
+   - Work Experience
+   - Education
+
+6. Recent work/Folio
+   - Design
+   - Code
+   - Photography
+
+7. Github banner/stats
+8. Contact Details + form
+
+FOOTER
+
+
+
+EDUCATION
+Major in Usability
+Sub-major in Video production and Project Management
+
+
+SKILLS
+
+Basic         *  (I've used it but I'm still learning)
+Intermediate **  (I've got a good working knowledge)
+Advanced    ***  (I've used this a lot and am very comfortable with it, but there's always more to learn)
+Expert     ****  (I'm pretty good at this)
+
+
+
+FRONT-END DEVELOPMENT
+
+  CSS/HTML      15 years (Advanced)
+  PHP/MySQL     12 years (Basic)
+
+  JavaScript    7 years
+    jQuery      7 years
+    AngularJS   3.5 years
+    Angular     0.5 year
+
+
+SOFTWARE/TOOLS
+    Photoshop     14 years  (Advanced)
+    SASS/LESS     3.5 years (Advanced)
+    Gulp/Grunt    3.5 years (Advanced)
+    Git           3.5 years (Bitbucket/Github) Intermediate
+    Yeoman/Bower  3.5 years (Intermediate)
+    Node/NPM      3.5 years (Intermediate)
+    Firebase      1.5 years (Proficient)
+
+UX/UI DESIGN
+
+  Usability     15 years
+  UI Design     15 years
+  User Testing  4 years
+  Prototyping   4 years
+
+
+TOOLS I USE
+
+
+
+  Slack
+  Trello
+  JIRA
+  Trac
+
+  WordPress     12 years  (Intermediate)
+
+
+
+OTHER SKILLS
+
+
+
+
+
+
+AGILE DEVELOPMENT
+
+
+
+
+Skill charts based on proficiency (bar chart is probably the best, maybe timeline)
+ - Years experience in different fields
+ - Relative skill levels
+
+
+
+
+
+## Technical Skills
+
+JavaScript (jQuery, ES5, ES6/ES2015, TypeScript)
+HTML/CSS (HTML5, CSS3)
+NoSQL (Firebase, MongoDB)
+PHP/MySQL (working knowledge)
+
+## Framework & Systems
+AngularJS 1.x, Angular 2+, Bootstrap 3, Bootstrap 4, Material Design, WordPress
+
+## Tools & Workflow
+Yeoman, Bower, Grunt/Gulp, NodeJS, NPM, Yarn, SASS/LESS, Git (Github, Bitbucket), Trello, Slack, JIRA, Trac
+
+
+
+## This is what I'm good at
+  Front-End Development
+  UX/UI Design & Usability
+  Prototyping & User Testing
+
+
+## I also know about
+
+  Scrum & Agile Development (worked in roles as Product Owner, Scrum Master and Scrum team member)
+  Project Management
+  Product Development & Product Management
+  Requirements Gathering & Specification
+  Seach Engine Optimisation
+  Information Design & Information Architecture
+  Digital & Affiliate Marketing
+
+
+
+Interaction Design
+Mobile First & Responsive Design
+
+
+
+## Personality Traits
+
+Creative but analytical
+Perfectionist but realistic
+Enthusiastic but practical
+Self-reliant but thrives in teams
+Detail-oriented
+
+
+
+## What drives me?
+
+Solving problems
+Learning new skills
+Optimising and improving performance (increase efficiency, improve UX, improved speed)
+
+Using my skills and experience to come up with solutions. Problem solving is in everything from coding problems and bugs to customer experience pain points.  a combination of UI and interaction design.
+
+
+
+## Interests & Hobbies
+
+Technology Enthusiat
+Gamer & Computer Geek
+Photography & Videography
+
+
+
+
+
+
+
+LAYOUT: CONSIDER TABS for SKILLS & TOOLBOX
+
+- Each would show a list of skills categorised using a Masonry/Isotope style layout with some basic filters
+- Consider using dots or dashes or hearts and colours as some sort of indicator for proficiency level (e.g. I'm Pretty Good at this, I'm still learning etc.)
+- Cards for each skill could be inspired by retro gaming UI with the indicator for life/health appearing as the proficiency level
+
+
+
+item: {
+  id: 1,
+  proficiency: 1-4,
+  type: 'string',
+  icon: 'string.svg',
+  name: 'string'
+}
+
+TYPE:
+- Frameworks (Angular, AngularJS, Bootstrap, WordPress)
+- Languages (JavaScript, HTML, ES6/ES2015, TypeScript)
+- Applications (Photoshop, XD, Illustrator, Windows 10, Trello, Slack, VS Code, Planner, Office 365 )
+- Workflow Tools (Grunt, Gulp, Webpack, NPM, NodeJS, Bower, Yeoman, Bitbucket, Github, Dropbox, Google Drive )
+- Services (Firebase, Google Analytics, Google Cloud Platform)
+
+LEVEL: 1,2,3,4

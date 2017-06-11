@@ -1,0 +1,46 @@
+.text-faded { color: rgba(245,245,245,0.7); }
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-headings;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+h1 { font-size: 3.5rem; }
+h5 { font-size: 1.1rem; }
+
+.text-faded { color: rgba(245, 245, 245, 0.7);}
+.text-dark { color: #001A33; }
+.text-primary { color: $teal!important; }
+
+::-moz-selection {
+    text-shadow: none;
+    color: #fff;
+    background: $pink;
+}
+::selection {
+    text-shadow: none;
+    color: #fff;
+    background: $pink;
+}
+img::selection {
+    color: #fff;
+    background: $pink;
+}
+img::-moz-selection {
+    color: #fff;
+    background: $pink;
+}
+
+.section-heading {
+  text-align: center;
+  border-bottom: 1px solid rgba( $pink, .5 );
+  color: $teal;
+  margin-bottom: 2rem;
+}
+
+.section-heading h1 {
+  padding-bottom: 1rem;
+}

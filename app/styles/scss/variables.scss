@@ -1,0 +1,51 @@
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+// Start with assigning color names to specific hex values.
+$white:  #fff;
+$black:  #000;
+$red:    #d9534f;
+
+$yellow: #fddb3c;
+$green:  #5cb85c;
+$orange: #f16b38;
+
+$blue:   #3691c6;
+$teal:   #60dbd9;
+$pink:   #ff28a3;
+
+$purple: #6c1dae;
+
+// Create grayscale
+$gray-dark:                 #292b2c;
+$gray:                      #464a4c;
+$gray-light:                rgba(255,255,255,0.5);
+$gray-lighter:              rgba(255,255,255,0.75);
+$gray-lightest:             rgba(255,255,255,0.9);
+
+// Reassign color vars to semantic color scheme
+$brand-primary:             $purple;
+$brand-accent:              $pink;
+$brand-success:             $green;
+$brand-info:                $teal;
+$brand-warning:             $orange;
+$brand-danger:              $red;
+$brand-inverse:             $gray-dark;
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded:            true;
+$enable-shadows:            false;
+$enable-gradients:          true;
+$enable-transitions:        true;
+$enable-hover-media-query:  false;
+$enable-grid-classes:       true;
+$enable-print-styles:       true;
+
+$font-standard: 'Roboto Condensed', sans-serif;
+$font-headings: 'Pacifico', cursive;
+$font-fancy:    'Warnes', cursive;

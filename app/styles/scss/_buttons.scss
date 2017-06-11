@@ -1,0 +1,27 @@
+.btn {
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-outline-white {
+    border-color: $white;
+    color: $white;
+    background: transparent;
+}
+.btn-outline-white:focus { color: #fff; }
+
+.btn-outline-white:hover,
+.btn-outline-white:active {
+    background-color: $white;
+    color: #000;
+}
+
+
+.btn-xl {
+    padding: 15px 30px;
+    font-size: 20px;
+}
+

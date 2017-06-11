@@ -1,0 +1,167 @@
+/* Controls
+---------------------------------------------------------------------- */
+
+.bg-grid {
+  background-image: url(../images/bg-grid.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.grid-controls {
+  background: rgba(0,0,0,.25);
+  padding: 0;
+  margin: 1rem 0;
+
+    .control {
+        font-family: $font-standard;
+        position: relative;
+        display: inline-block;
+        width: auto;
+        height: 2.5rem;
+        background: transparent;
+        cursor: pointer;
+        font-size: 1rem;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: 5px;
+        color: #fff;
+        border: 1px solid transparent;
+        transition: background 150ms;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .control:not(.control-active):hover {
+        border-color: $pink;
+        color: $pink;
+    }
+    .control-sort { padding-right: 40px;}
+    .control-sort:after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid;
+        border-left: 2px solid;
+        top: calc(50% - 4px);
+        right: 15px;
+        transform:  translateY(1px) rotate(45deg);
+    }
+     .control:focus,
+     .control:active {
+       outline: none;
+     }
+
+    .control-sort[data-order="desc"]:after {
+        transform:  translateY(-4px) rotate(-135deg);
+    }
+    .control-active {
+        border-color: $teal;
+        color: $teal;
+    }
+    .control:first-of-type { border-radius: 3px 0 0 3px; }
+    .control:last-of-type { border-radius: 0 3px 3px 0; }
+    .control-filter + .control-sort { margin-left: .75rem; }
+
+
+    // .control-filter[data-type="application"]  { color: $red;}
+    // .control-filter[data-type="framework"]    { color: $blue;}
+    // .control-filter[data-type="language"]     { color: $green; }
+    // .control-filter[data-type="service"]      { color: $yellow; }
+    // .control-filter[data-type="workflow"]     { color: $orange; }
+
+} // .grid-controls
+
+
+/* Target Elements
+---------------------------------------------------------------------- */
+.grid-container {
+
+  min-height: 300px;
+
+  .item,
+  .gap {
+      display: inline-block;
+      vertical-align: top;
+  }
+
+  // .item.application div { border-color: $red;}
+  // .item.framework div   { border-color: $blue;}
+  // .item.language div    { border-color: $green; }
+  // .item.service div     { border-color: $yellow; }
+  // .item.workflow div    { border-color: $orange; }
+
+
+  .item div {
+      background: #222;
+      border-top: .5rem solid $gray;
+      border-radius: 0.25rem;
+      margin-bottom: 30px;
+      position: relative;
+      text-align: center;
+      max-height: 200px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+  }
+  .item .name {
+      display: block;
+      padding-top: 1rem;
+      font-size: 1rem;
+      color: $gray-lighter;
+  }
+
+  .item .icon {
+    height: auto;
+    max-height: 100px;
+    max-width: 100px;
+    display: inline-block;
+  }
+
+
+
+} // .grid-container
+
+
+span[class^="proficiency-"] {
+  display: block;
+  border: 1px solid $teal;
+  padding: 3px;
+  height: 16px;
+  min-width: 80px;
+  margin: 5px 30px;
+  position: relative;
+}
+span[class^="proficiency-"]:before,
+span[class^="proficiency-"]:after,
+span[class^="proficiency-"] b::before,
+span[class^="proficiency-"] b::after {
+  content: ' ';
+  position: absolute;
+  visibility: hidden;
+  top: 4px;
+  background: #fff;
+  height: 5px;
+  width: 20%;
+}
+span.proficiency-1::before,
+span.proficiency-2::before,
+span.proficiency-3::before,
+span.proficiency-4::before  {
+  visibility: visible;
+  left: 5%;
+}
+span.proficiency-2::after,
+span.proficiency-3::after,
+span.proficiency-4::after {
+  visibility: visible;
+  left: 28%;
+}
+span.proficiency-3 b::before,
+span.proficiency-4 b::before {
+  visibility: visible;
+  left: 52%;
+}
+span.proficiency-4 b::after {
+  visibility: visible;
+  left: 76%;
+}

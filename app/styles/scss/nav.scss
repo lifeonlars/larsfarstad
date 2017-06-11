@@ -1,0 +1,46 @@
+.navbar {
+    transition: all .4s;
+}
+
+
+.navbar-toggleable-sm .navbar-collapse {
+    justify-content: flex-end;
+}
+
+/* responsive nav */
+@media(max-width:48em) {
+    .navbar .navbar-nav>.nav-item {
+        float: none;
+        margin-left: .1rem;
+    }
+    .navbar .navbar-nav {
+        float: none !important;
+
+    }
+}
+
+@media(min-width:48em) {
+    .navbar {
+        border-color: transparent;
+        background-color: transparent;
+        min-height: 60px;
+    }
+    .navbar .navbar-nav > li > a,
+    .navbar .navbar-nav> li > a:focus {
+        color: #fff;
+        font-family: $font-headings;
+        font-weight: 400;
+        font-size: 1.5rem;
+        transition: all .25s linear;
+        text-shadow: rgba(255, 255, 255, 0.5) 0px 0px 10px, rgba(255, 255, 255, 0.5) 0px 0px 15px, rgb(0, 255, 255) 0px 0px 20px, rgb(0, 255, 255) 0px 0px 30px;
+    }
+    .navbar .navbar-nav > li > a:hover,
+    .navbar .navbar-nav > li > a:focus:hover {
+        text-shadow: rgba(255, 255, 255, 0.5) 0px 0px 10px, rgba(255, 255, 255, 0.5) 0 0 15px, rgb(255, 0, 222) 0px 0px 20px, rgb(255, 0, 222) 0px 0px 30px;
+    }
+    #topNav {
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+}
