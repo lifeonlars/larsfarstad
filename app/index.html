@@ -15,8 +15,6 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Condensed" rel="stylesheet">
-
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -449,19 +447,26 @@
 
       ga('create', 'UA-327961-11', 'auto');
       ga('send', 'pageview');
-
     </script>
 
-    <!-- build:js scripts/vendor.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Pacifico', 'Roboto Condensed:400']
+        }
+      });
+    </script>
+
+    <!-- build:js scripts/vendor.js defer -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/tether/dist/js/tether.js"></script>
-    <script src="/bower_components/wow/dist/wow.js"></script>
     <script src="/bower_components/jquery.easing/js/jquery.easing.js"></script>
+    <script src="/bower_components/tether/dist/js/tether.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js scripts/main.js -->
+    <!-- build:js scripts/main.js defer -->
     <script src="/bower_components/mixitup/dist/mixitup.js"></script>
     <script src="/bower_components/bootstrap/js/dist/util.js"></script>
     <script src="/bower_components/bootstrap/js/dist/collapse.js"></script>
