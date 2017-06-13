@@ -10,7 +10,7 @@
   text-align: center;
   color: #fff;
   width: 100%;
-  min-height: 60%;
+  min-height: 50%;
 }
 
 .masthead .header-content {
@@ -26,6 +26,14 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+@include media-breakpoint-up(sm) {
+  .masthead { min-height: 60%; }
+  @media (orientation: landscape) {
+      .masthead { min-height: 100%; }
+  }
+
+}
+
 
 @include media-breakpoint-up(md) {
   .masthead {
