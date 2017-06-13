@@ -7,7 +7,7 @@
         offset: 60
     });
 
-    new WOW().init();
+    //new WOW().init();
     $('a.page-scroll').bind('click', function(event) {
         let $ele = $(this);
         $('html, body').stop().animate({

@@ -6,10 +6,16 @@ const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
 
+const	shell = require('gulp-shell');
+const replace = require('gulp-replace');
+const download = require('gulp-download');
+const fs = require('fs');
+
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-var dev = true;
+
+let dev = true;
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -35,6 +41,12 @@ gulp.task('scripts', () => {
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe(reload({stream: true}));
 });
+
+gulp.task('get-analytics', function() {
+  return download('https://www.google-analytics.com/analytics.js')
+    .pipe(gulp.dest('app/scripts/'));
+});
+
 
 function lint(files) {
   return gulp.src(files)
@@ -76,6 +88,10 @@ gulp.task('html', ['styles', 'scripts'], () => {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true
     })))
+    .pipe(replace(/<link rel=\"stylesheet\" href=\"\/styles\/main.css\"[^>]*>/, function(s) {
+			var style = fs.readFileSync('docs/styles/main.css', 'utf8');
+			return '<style>\n' + style + '\n</style>';
+		}))
     .pipe(gulp.dest('docs'));
 });
 
