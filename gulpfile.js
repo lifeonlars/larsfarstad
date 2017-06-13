@@ -79,8 +79,6 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('docs'));
 });
 
-
-
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin()))
@@ -105,7 +103,7 @@ gulp.task('extras', () => {
 gulp.task('clean', del.bind(null, ['.tmp']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
+  runSequence(['clean'], ['styles', 'scripts', 'fonts'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
@@ -126,11 +124,11 @@ gulp.task('serve', () => {
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/fonts/**/*', ['fonts']);
-    gulp.watch('bower.json', ['wiredep', 'fonts']);
+    gulp.watch('bower.json', ['fonts']);
   });
 });
 
-gulp.task('serve:docs', ['default'], () => {
+gulp.task('serve:dist', ['default'], () => {
   browserSync.init({
     notify: false,
     port: 9000,
@@ -184,6 +182,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence(['clean', 'wiredep'], 'build', resolve);
+    runSequence(['clean'], 'build', resolve);
   });
 });
