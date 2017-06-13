@@ -6,6 +6,7 @@ const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
 
+const inlineSource = require('gulp-inline-source');
 const	shell = require('gulp-shell');
 const replace = require('gulp-replace');
 const download = require('gulp-download');
@@ -72,7 +73,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe($.if(/\.css$/, $.uncss({
       stylesheets: ['docs/styles/main.css'],
       html: ['**/*.html'],
-      ignore: ['.icon'],
+      ignore: [],
       ignoreSheets : [
         /googleapis/
       ]
@@ -88,10 +89,6 @@ gulp.task('html', ['styles', 'scripts'], () => {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true
     })))
-    .pipe(replace(/<link rel=\"stylesheet\" href=\"\/styles\/main.css\"[^>]*>/, function(s) {
-			var style = fs.readFileSync('docs/styles/main.css', 'utf8');
-			return '<style>\n' + style + '\n</style>';
-		}))
     .pipe(gulp.dest('docs'));
 });
 
@@ -190,10 +187,30 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
-  return gulp.src('docs/**/*').pipe($.size({title: 'build', gzip: true}));
+gulp.task('importCSS', function() {
+    return gulp.src('docs/*.html')
+        .pipe(replace(/<link rel=\"stylesheet\" href=\"\/styles\/main.css\"[^>]*>/, function(s) {
+            let style = fs.readFileSync('docs/styles/main.css', 'utf8');
+            return '<style>\n' + style + '\n</style>';
+        }))
+        .pipe(gulp.dest('docs/'));
 });
+
+gulp.task('inlinesource', function () {
+    return gulp.src('docs/*.html')
+        .pipe(inlineSource())
+        .pipe(gulp.dest('docs/'));
+});
+
+gulp.task('build', () => {
+  runSequence(['lint', 'html', 'images', 'fonts', 'extras'], ['inlinesource'], () => {
+    return gulp.src('docs/**/*').pipe($.size({title: 'build', gzip: true}));
+  });
+});
+
+// gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras', 'inlineCSS'], () => {
+//   return gulp.src('docs/**/*').pipe($.size({title: 'build', gzip: true}));
+// });
 
 gulp.task('default', () => {
   return new Promise(resolve => {
