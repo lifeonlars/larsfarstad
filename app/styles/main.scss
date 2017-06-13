@@ -1,19 +1,17 @@
 
 @import "scss/variables.scss";
-// bower:scss
-@import "bower_components/bootstrap/scss/bootstrap.scss";
-// endbower
-
+@import "scss/bootstrap.scss";
 @import "scss/mixins.scss";
+
 @import "scss/typography.scss";
-@import "scss/_buttons.scss";
-@import "scss/grid.scss";
-@import "scss/timeline.scss";
 @import "scss/masthead.scss";
 @import "scss/nav.scss";
+@import "scss/buttons.scss";
+
+@import "scss/timeline.scss";
+@import "scss/mixitup.scss";
+
 @import "scss/utility.scss";
-
-
 
 
 html,
@@ -32,28 +30,6 @@ body {
 
 
 
-.text-normal { font-family: $font-standard;}
-.text-fancy  { font-family: $font-fancy; }
-
-
-
-a {
-    color: $brand-accent;
-    transition: all .35s;
-}
-a:hover,
-a:focus {
-    outline: 0;
-}
-
-p {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-
-
 .bg-primary { background-color: $brand-primary;}
 .bg-alt { background-color: #222; }
 .bg-black { background-color: #000; }
@@ -65,33 +41,18 @@ p {
   position: relative;
   transform: rotateX(10deg);
   transform-origin: center top;
-  transition: transform 900ms ease-in-out 300ms;
 }
-.box-outline {
-  border: 1px solid $gray;
-  padding: 15px;
-  border-radius: 0.25rem;
-}
-.box-outline-primary { border-color:$brand-primary; }
-.box-outline-accent { border-color: $brand-accent; }
-.box-outline-info { border-color: $brand-info; }
+
 
 .list-group-info .list-group-item {
   background: transparent;
   color: $brand-info;
   border-color: $brand-info;
 }
-
 .list-group-accent .list-group-item {
   background: transparent;
   color: $brand-accent;
   border-color: $brand-accent;
 }
 
-.profile {
-  float: left;
-  max-height: 300px;
-  max-width: 300px;
-  border-radius: 250px;
-  overflow: hidden;
-}
+

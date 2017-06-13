@@ -75,10 +75,11 @@
 
 /* Target Elements
 ---------------------------------------------------------------------- */
+/* uncss:ignore */
 .grid-container {
-
   min-height: 300px;
 
+  /* uncss:ignore */
   .item,
   .gap {
       display: inline-block;
@@ -91,7 +92,7 @@
   // .item.service div     { border-color: $yellow; }
   // .item.workflow div    { border-color: $orange; }
 
-
+  /* uncss:ignore */
   .item div {
       background: #222;
       border-top: .5rem solid $gray;
@@ -103,13 +104,14 @@
       padding-top: 15px;
       padding-bottom: 15px;
   }
+  /* uncss:ignore */
   .item .name {
       display: block;
       padding-top: 1rem;
       font-size: 1rem;
       color: $gray-lighter;
   }
-
+  /* uncss:ignore */
   .item .icon {
     height: auto;
     max-height: 100px;

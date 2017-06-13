@@ -1,19 +1,48 @@
+
+.text-normal { font-family: $font-standard;}
+.text-fancy  { font-family: $font-fancy; }
+
 .text-faded { color: rgba(245,245,245,0.7); }
+.text-dark { color: $gray-dark; }
+.text-primary { color: $teal!important; }
+.text-accent { color: $pink!important; }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: $font-headings;
+  font-family: $font-fancy;
   margin-bottom: 1rem;
   margin-top: 0.5rem;
 }
 h1 { font-size: 3.5rem; }
 h5 { font-size: 1.1rem; }
 
-.text-faded { color: rgba(245, 245, 245, 0.7);}
-.text-dark { color: #001A33; }
-.text-primary { color: $teal!important; }
+.section-heading {
+  text-align: center;
+  border-bottom: 1px solid rgba( $pink, .5 );
+  color: $teal;
+  margin-bottom: 2rem;
+}
+.section-heading h1 {
+  padding-bottom: 1rem;
+}
+
+
+
+a {
+    color: $brand-accent;
+    transition: all .35s;
+}
+a:hover,
+a:focus {
+    outline: 0;
+    color: $brand-primary;
+}
+
+
+
+
 
 ::-moz-selection {
     text-shadow: none;
@@ -34,13 +63,3 @@ img::-moz-selection {
     background: $pink;
 }
 
-.section-heading {
-  text-align: center;
-  border-bottom: 1px solid rgba( $pink, .5 );
-  color: $teal;
-  margin-bottom: 2rem;
-}
-
-.section-heading h1 {
-  padding-bottom: 1rem;
-}

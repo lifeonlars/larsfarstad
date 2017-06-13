@@ -1,151 +1,91 @@
+
 .timeline {
   border-left: 3px solid $teal;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
   position: relative;
-  padding: 0 30px;
-  margin-left: 280px;
-  position: relative;
+  padding-left: 30px;
+
 }
-.timeline .item {
+.timeline-item {
   position: relative;
   margin-bottom: 45px;
 }
-.timeline .item:last-child {
+.timeline-item:last-child {
   margin-bottom: 0;
 }
-.timeline .item:before {
-  content: "";
+.timeline-item:before {
+  content: ' ';
   position: absolute;
   left: -43px;
   top: 0;
   display: inline-block;
   width: 22px;
   height: 22px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
   border-radius: 50%;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   background: #000;
   border: 3px solid $pink;
 }
-.timeline .item:after {
-  content: "";
+.timeline-item:after {
+  content: ' ';
   position: absolute;
   left: -37px;
   top: 6px;
   display: inline-block;
   width: 10px;
   height: 10px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
   border-radius: 50%;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   background: $teal;
   z-index: 10;
 }
-.timeline .work-place {
+.timeline .timeline-header {
   position: relative;
 }
-.timeline .location {
-  position: absolute;
-  right: 0;
-  top: 2px;
+.timeline .timeline-location {
   color: $teal;
 }
-.timeline .location .fa {
-  margin-right: 5px;
-}
-.timeline .place {
-  margin-top: 0;
-  margin-bottom: 15px;
+.timeline .timeline-place {
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
   font-size: 1.5rem;
   color: #fff;
 }
-.timeline .job-meta {
-  position: absolute;
-  left: -280px;
-  width: 220px;
-  top: 0;
-  text-align: right;
+.timeline .timeline-meta {
+  margin-bottom: 0.25em;
+  text-align: left;
 }
-.timeline .job-meta .title {
+.timeline .timeline-title {
   font-size: 1.1rem;
   color: $teal;
   line-height: 1.2;
-
 }
-.timeline .job-meta .time {
-  color: $gray-lighter;
-
-}
-.timeline .job-desc {
+.timeline .timeline-period,
+.timeline .timeline-description {
   color: $gray-lighter;
 }
 
-
-
-/* Extra small devices (phones, less than 768px) */
-@media (max-width: 767px) {
-  .header .social {
-    margin: 0 auto;
-    text-align: center;
-  }
-  .header .actions {
-    position: static;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .header .actions .btn {
-    margin-bottom: 15px;
-    font-size: 12px;
-    display: inline-block;
-    width: 100%;
-  }
-  .header .actions .btn:last-child {
-    margin-bottom: 0;
-  }
-  .header .name {
-    font-size: 36px;
-  }
-  .header .title {
-    font-size: 22px;
-  }
-  .header .contact-info li {
-    margin-right: 0;
-    margin-bottom: 15px;
-    font-size: 14px;
-    width: 100%;
-    display: inline-block;
-  }
-  .header .contact-info li:last-child {
-    margin-bottom: 0;
-  }
-  .section {
-    padding: 30px;
-  }
-  .section-title {
-    font-size: 20px;
-  }
+@include media-breakpoint-up(md) {
   .timeline {
-    margin-left: 0;
-    padding-right: 0;
+    padding-right: 30px;
+    margin-left: 280px;
   }
-  .timeline .place {
-    margin-bottom: 5px;
+  .timeline .timeline-meta {
+    position: absolute;
+    left: -280px;
+    width: 220px;
+    top: 0;
+    text-align: right;
   }
-  .timeline .job-meta {
-    position: static;
-    margin-bottom: 15px;
-    text-align: left;
+  .timeline .timeline-place {
+    margin-top: 0;
+    padding-right: 130px;
   }
+  .timeline .timeline-location {
+    position: absolute;
+    right: 0;
+    top: 2px;
+  }
+
 }

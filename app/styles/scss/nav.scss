@@ -1,25 +1,17 @@
-.navbar {
-    transition: all .4s;
-}
+.navbar { transition: all .4s; }
 
-
-.navbar-toggleable-sm .navbar-collapse {
-    justify-content: flex-end;
-}
+.navbar-toggleable-sm .navbar-collapse { justify-content: flex-end; }
 
 /* responsive nav */
-@media(max-width:48em) {
+@include media-breakpoint-down(md) {
     .navbar .navbar-nav>.nav-item {
         float: none;
         margin-left: .1rem;
     }
-    .navbar .navbar-nav {
-        float: none !important;
-
-    }
+    .navbar .navbar-nav { float: none !important; }
 }
 
-@media(min-width:48em) {
+@include media-breakpoint-up(md) {
     .navbar {
         border-color: transparent;
         background-color: transparent;
@@ -28,7 +20,7 @@
     .navbar .navbar-nav > li > a,
     .navbar .navbar-nav> li > a:focus {
         color: #fff;
-        font-family: $font-headings;
+        font-family: $font-fancy;
         font-weight: 400;
         font-size: 1.5rem;
         transition: all .25s linear;

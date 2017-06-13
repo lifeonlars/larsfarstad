@@ -1,3 +1,4 @@
+/* Tron like grid background in pure CSS */
 @mixin grid($blockcolor, $linecolor, $linewidth, $linespread) {
   $spread: ($linewidth + $linespread) / 2;
   background-color: $blockcolor;

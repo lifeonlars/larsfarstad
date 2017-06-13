@@ -9,7 +9,7 @@
 
     new WOW().init();
     $('a.page-scroll').bind('click', function(event) {
-        var $ele = $(this);
+        let $ele = $(this);
         $('html, body').stop().animate({
             scrollTop: ($($ele.attr('href')).offset().top - 60)
         }, 1450, 'easeInOutExpo');
@@ -30,8 +30,8 @@
 
 
 (function(window) {
-    var Api = function(dataset) {
-        var _db = [];
+    let Api = function(dataset) {
+        let _db = [];
 
         Object.defineProperties(this, {
             db: {
@@ -63,11 +63,11 @@
         },
 
         get: function(query) {
-            var self = this;
+            let self = this;
 
             return Promise.resolve()
                 .then(function() {
-                    var output;
+                    let output;
 
                     query = Object.assign(new Api.Query(), query);
 
@@ -83,8 +83,8 @@
 
         filter: function(input, query) {
             return input.filter(function(item) {
-                var key;
-                var value;
+                let key;
+                let value;
 
                 for (key in query) {
                     if (key.match(/^\$/g)) continue;
@@ -102,8 +102,8 @@
 
         sort: function(input, query) {
             return input.sort(function(a, b) {
-                var valueA = a[query.$sort_by];
-                var valueB = b[query.$sort_by];
+                let valueA = a[query.$sort_by];
+                let valueB = b[query.$sort_by];
 
                 if (valueA > valueB) {
                     return query.$order === 'asc' ? 1 : -1;
@@ -127,7 +127,7 @@
 
 // Typically, our data would live in a DB and be retrieved via a JSON API, but in
 // this demo we will create a mock dataset using an array literal:
-var items = [
+const items = [
     {
         id: 1,
         proficiency: 3,
@@ -364,40 +364,50 @@ var items = [
 
 // Create an api instance, passing in our mock data to represent the
 // contents of a DB.
-var api = new Api(items);
+let api = new Api(items);
+
 
 // As we'll be building and binding our own UI, we'll start with caching
 // references to any DOM elements we'll need to work with
-var controls  = document.querySelector('[data-ref="controls"]');
-var filters   = document.querySelectorAll('[data-ref="filter"]');
-var sorts     = document.querySelectorAll('[data-ref="sort"]');
-var container = document.querySelector('[data-ref="container"]');
+const controls  = document.querySelector('[data-ref="controls"]');
+const filters   = document.querySelectorAll('[data-ref="filter"]');
+const sorts     = document.querySelectorAll('[data-ref="sort"]');
+const container = document.querySelector('[data-ref="container"]');
 
 // "Gap" elements are used to maintain even columns in a justified grid. See our
 // "MixItUp Grid Layouts" tutorial for more information.
-var firstGap = document.querySelector('[data-ref="first-gap"]');
+const firstGap = document.querySelector('[data-ref="first-gap"]');
+
+
 
 // We'll need to keep track of our active current filter so
 // that we can sort within the current filter.
-var activeType = 'language';
+let activeType = 'language';
 
 // Instantiate and configure the mixer
-var mixer = mixitup(container, {
-    selectors: {
-        target: '[data-ref="item"]' // Query targets with an attribute selector to keep our JS and styling classes seperate
-    },
-    layout: {
-        siblingAfter: firstGap // Ensure the first "gap" element is known to mixitup incase of insertion into an empty container
-    },
-    data: {
-        uidKey: 'id' // Our data model must have a unique id. In this case, its key is 'id'
-    },
-    render: { // We must provide a target render function incase we need to render new items not in the initial dataset (not used in this demo)
-        target: function(item) {
-            return '<aside class="col-6 col-sm-4 col-md-3 col-lg-2 item ' + item.type + '" data-ref="item"><div><img class="icon" src="images/icons/'+ item.icon  +'" alt="' + item.name + '"><span class="name">' + item.name + '</span><span class="proficiency-'+ item.proficiency +'"><b></b></span></div></aside>';
-        }
-    }
-});
+let mixer;
+
+api.get({ type: 'language' })
+    .then( initialItems => {
+        mixer = mixitup(container, {
+            selectors: {
+                target: '[data-ref="item"]'
+            },
+            load: {
+               dataset: initialItems
+            },
+            data: {
+                uidKey: 'id'
+            },
+            render: {
+                 target: function(item) {
+                    return '<aside class="col-6 col-sm-4 col-md-3 col-lg-2 item ' + item.type + '" data-ref="item"><div><img class="icon" src="images/icons/'+ item.icon  +'" alt="' + item.name + '"><span class="name">' + item.name + '</span><span class="proficiency-'+ item.proficiency +'"><b></b></span></div></aside>';
+                }
+            }
+        });
+    })
+    .catch(console.error.bind(console));
+
 /**
  * A helper function to set an active styling class on an active button,
  * and remove it from its siblings at the same time.
@@ -407,8 +417,8 @@ var mixer = mixitup(container, {
  * @return {void}
  */
 function activateButton(activeButton, siblings) {
-    var button;
-    var i;
+    let button;
+    let i;
     for (i = 0; i < siblings.length; i++) {
         button = siblings[i];
         button.classList[button === activeButton ? 'add' : 'remove']('control-active');
@@ -424,9 +434,9 @@ function activateButton(activeButton, siblings) {
 function handleButtonClick(button) {
     // Define default values for type, sortBy and order
     // incase they are not present in the clicked button
-    var type  = activeType;
-    var sortBy = 'id';
-    var order  = 'asc';
+    let type  = activeType;
+    let sortBy = 'id';
+    let order  = 'asc';
     // If button is already active, or an operation is in progress, ignore the click
     if (button.classList.contains('control-active') || mixer.isMixing()) return;
     // Else, check what type of button it is, if any
@@ -464,16 +474,8 @@ controls.addEventListener('click', function(e) {
     handleButtonClick(e.target);
 });
 
-// Set controls the active controls on startup to match the default filter and sort
+// Set controls the active controls on startup to match the default filter
 activateButton(controls.querySelector('[data-type="language"]'), filters);
-//activateButton(controls.querySelector('[data-order="desc"]'), sorts);
 
-// Finally, load the dataset with default filter into the mixer
-api.get({ type: 'language' })
-    .then(function(items) {
-        return mixer.dataset(items);
-    })
-    .then(function(state) {
-        console.log('fetched ' + state.activeDataset.length + ' items');
-    })
-    .catch(console.error.bind(console));
+
+

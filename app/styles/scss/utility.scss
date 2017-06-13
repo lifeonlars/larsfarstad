@@ -44,5 +44,14 @@
   width: 100%;
   display: inline-block;
   height: auto;
-
 }
+
+
+.box-outline {
+  border: 1px solid $gray;
+  padding: 15px;
+  border-radius: 0.25rem;
+}
+.box-outline-primary  { border-color:$brand-primary; }
+.box-outline-accent   { border-color: $brand-accent; }
+.box-outline-info     { border-color: $brand-info; }

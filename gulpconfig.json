@@ -1,0 +1,7 @@
+{
+	"remoteServer": "user@server",
+	"remotePath": "/path/to/your/public/html/directory/",
+	"cloudflareToken": "743834f71f14168e8d70073d413c69abd0692",
+	"cloudflareEmail": "lars.farstad@gmail.com",
+	"cloudflareDomain": "larsfarstad.com"
+}
