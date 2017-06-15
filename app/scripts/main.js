@@ -151,73 +151,48 @@ const items = [
     },
     {
         id: 4,
-        proficiency: 2,
-        type: 'framework',
-        icon: 'angular.svg',
-        name: 'Angular'
-    },
-    {
-        id: 5,
-        proficiency: 2,
-        type: 'framework',
-        icon: 'angularjs.svg',
-        name: 'AngularJS'
-    },
-    {
-        id: 6,
         proficiency: 1,
         type: 'language',
         icon: 'typescript.svg',
         name: 'TypeScript'
     },
     {
-        id: 7,
+        id: 5,
         proficiency: 1,
         type: 'language',
         icon: 'es6.svg',
         name: 'ES6/ES2015'
     },
+
+
+
     {
-        id: 8,
+        id: 11,
+        proficiency: 2,
+        type: 'framework',
+        icon: 'angular.svg',
+        name: 'Angular'
+    },
+    {
+        id: 12,
+        proficiency: 3,
+        type: 'framework',
+        icon: 'angularjs.svg',
+        name: 'AngularJS'
+    },
+    {
+        id: 13,
+        type: 'framework',
+        proficiency: 3,
+        icon: 'wordpress.svg',
+        name: 'WordPress'
+    },
+    {
+        id: 14,
         proficiency: 4,
         type: 'framework',
         icon: 'bootstrap4.svg',
         name: 'Bootstrap'
-    },
-    {
-        id: 9,
-        type: 'application',
-        proficiency: 3,
-        icon: 'photoshop.svg',
-        name: 'Adobe Photoshop'
-    },
-    {
-        id: 10,
-        type: 'application',
-        proficiency: 3,
-        icon: 'xd.svg',
-        name: 'Adobe XD'
-    },
-    {
-        id: 11,
-        type: 'application',
-        proficiency: 2,
-        icon: 'illustrator.svg',
-        name: 'Adobe Illustrator'
-    },
-    {
-        id: 12,
-        type: 'application',
-        proficiency: 3,
-        icon: 'vscode.svg',
-        name: 'Microsoft VSCode'
-    },
-    {
-        id: 14,
-        type: 'application',
-        proficiency: 3,
-        icon: 'slack.svg',
-        name: 'Slack'
     },
     {
         id: 15,
@@ -233,133 +208,234 @@ const items = [
         icon: 'ionic.svg',
         name: 'Ionic'
     },
+
+
+
     {
-        id: 17,
-        type: 'service',
+        id: 21,
+        type: 'application',
         proficiency: 3,
-        icon: 'udemy.svg',
-        name: 'Udemy'
+        icon: 'photoshop.svg',
+        name: 'Adobe Photoshop'
     },
     {
-        id: 18,
+        id: 22,
+        type: 'application',
+        proficiency: 3,
+        icon: 'xd.svg',
+        name: 'Adobe XD'
+    },
+    {
+        id: 23,
+        type: 'application',
+        proficiency: 2,
+        icon: 'illustrator.svg',
+        name: 'Adobe Illustrator'
+    },
+    {
+        id: 24,
+        type: 'application',
+        proficiency: 3,
+        icon: 'vscode.svg',
+        name: 'Microsoft VSCode'
+    },
+    {
+        id: 25,
+        type: 'application',
+        proficiency: 3,
+        icon: 'slack.svg',
+        name: 'Slack'
+    },
+    {
+        id: 26,
+        type: 'application',
+        proficiency: 3,
+        icon: 'chrome.svg',
+        name: 'Chrome Dev Tools'
+    },
+
+    {
+        id: 32,
         type: 'workflow',
         proficiency: 2,
         icon: 'gulp.svg',
         name: 'Gulp'
     },
     {
-        id: 19,
-        type: 'workflow',
-        proficiency: 2,
-        icon: 'grunt.svg',
-        name: 'Grunt'
-    },
-    {
-        id: 20,
+        id: 34,
         type: 'workflow',
         proficiency: 2,
         icon: 'github.svg',
         name: 'Github'
     },
     {
-        id: 21,
+        id: 35,
         type: 'workflow',
         proficiency: 2,
         icon: 'bitbucket.svg',
         name: 'Bitbucket'
     },
     {
-        id: 22,
+        id: 36,
         type: 'workflow',
         proficiency: 2,
         icon: 'nodejs.svg',
         name: 'NodeJS'
     },
     {
-        id: 23,
+        id: 37,
         type: 'language',
         proficiency: 3,
         icon: 'sass.svg',
         name: 'SASS'
     },
     {
-        id: 24,
-        type: 'framework',
-        proficiency: 3,
-        icon: 'wordpress.svg',
-        name: 'WordPress'
-    },
-    {
-        id: 25,
+        id: 38,
         type: 'workflow',
         proficiency: 2,
         icon: 'webpack.svg',
         name: 'Webpack'
     },
     {
-        id: 26,
+        id: 39,
         type: 'workflow',
         proficiency: 3,
         icon: 'npm.svg',
         name: 'NPM'
     },
     {
-        id: 27,
+        id: 310,
         type: 'workflow',
         proficiency: 3,
         icon: 'bower.svg',
         name: 'Bower'
     },
     {
-        id: 28,
+        id: 311,
         type: 'workflow',
         proficiency: 2,
         icon: 'yarn.svg',
         name: 'Yarn'
     },
     {
-        id: 29,
+        id: 313,
+        type: 'workflow',
+        proficiency: 2,
+        icon: 'yeoman.svg',
+        name: 'Yeoman'
+    },
+    {
+        id: 314,
+        type: 'workflow',
+        proficiency: 1,
+        icon: 'karma.svg',
+        name: 'Karma'
+    },
+    {
+        id: 315,
+        type: 'workflow',
+        proficiency: 1,
+        icon: 'jasmine.svg',
+        name: 'Jasmine'
+    },
+    {
+        id: 316,
+        type: 'workflow',
+        proficiency: 1,
+        icon: 'protactor.svg',
+        name: 'Protactor'
+    },
+
+
+
+
+    {
+        id: 41,
         type: 'service',
         proficiency: 3,
         icon: 'dropbox.svg',
         name: 'DropBox'
     },
     {
-        id: 30,
+        id: 42,
         type: 'service',
         proficiency: 3,
         icon: 'google-drive.svg',
         name: 'Google Drive'
     },
     {
-        id: 31,
+        id: 43,
         type: 'service',
         proficiency: 2,
         icon: 'google-analytics.svg',
         name: 'Google Analytics'
     },
     {
-        id: 32,
+        id: 44,
         type: 'service',
         proficiency: 1,
         icon: 'google-cloud.svg',
         name: 'Google Cloud Platform'
     },
     {
-        id: 33,
+        id: 45,
         type: 'service',
         proficiency: 2,
         icon: 'firebase.svg',
         name: 'Firebase'
     },
     {
-        id: 34,
-        type: 'workflow',
+        id: 46,
+        type: 'service',
         proficiency: 2,
-        icon: 'yeoman.svg',
-        name: 'Yeoman'
-    }
+        icon: 'cloudflare.svg',
+        name: 'Cloudflare'
+    },
 
+
+
+    {
+        id: 61,
+        type: 'learning',
+        proficiency: 0,
+        icon: 'udemy.svg',
+        name: 'Udemy'
+    },
+    {
+        id: 62,
+        type: 'learning',
+        proficiency: 0,
+        icon: 'codeschool.svg',
+        name: 'Code School'
+    },
+    {
+        id: 63,
+        type: 'learning',
+        proficiency: 0,
+        icon: 'stackoverflow.svg',
+        name: 'Stack Overflow'
+    },
+    {
+        id: 64,
+        type: 'learning',
+        proficiency: 0,
+        icon: 'sitepoint.svg',
+        name: 'SitePoint'
+    },
+    {
+        id: 65,
+        type: 'learning',
+        proficiency: 0,
+        icon: 'codepen.svg',
+        name: 'CodePen'
+    },
+    {
+        id: 66,
+        type: 'learning',
+        proficiency: 0,
+        icon: 'youtube.svg',
+        name: 'YouTube'
+    }
 ];
 
 // Create an api instance, passing in our mock data to represent the

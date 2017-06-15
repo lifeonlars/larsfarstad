@@ -167,3 +167,6 @@ span.proficiency-4 b::after {
   visibility: visible;
   left: 76%;
 }
+
+// If set to zero, then proficiency is irrelevant and should be hidden
+span.proficiency-0 { display: none; }

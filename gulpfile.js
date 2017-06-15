@@ -73,7 +73,9 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe($.if(/\.css$/, $.uncss({
       stylesheets: ['docs/styles/main.css'],
       html: ['**/*.html'],
-      ignore: [],
+      ignore: [
+        '.control-active'
+      ],
       ignoreSheets : [
         /googleapis/
       ]
