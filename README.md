@@ -15,11 +15,24 @@ Live site: [larsfarstad.com](https://larsfarstad.com)
 
 ### CSS 
 
-1. CSS is concatenated and minified into a single file `main.css` using [gulp-cssnano](https://github.com/ben-eb/gulp-cssnano)
-2. 
+CSS consists of some minimal custom CSS as well as parts of Bootstrap 4 (this can be customised depending on what you need)
 
+1. [gulp-cssnano](https://github.com/ben-eb/gulp-cssnano) minifies CSS into a single file `main.css` 
+2. [gulp-uncss](https://github.com/ben-eb/gulp-uncss) is then used to remove any CSS that isn't used on the page 
+3. [gulp-inline-source](https://github.com/fmal/gulp-inline-source) is then used to copy the contents of `main.css` into the head of the page replacing the link ref.
 
-Since this is just a single page the * In order to 
+Since this is just a single page using inline-source adding the whole CSS to the head won't matter and eliminates the **Avoid render blocking CSS** warnings from Google PageSpeed Insights.
+
+### JS/Plugins 
+
+* jQuery and jQuery easing
+* Mixitup for skills and folio listings
+* Bootstrap Scrollspy, Utils, Collapse
+* Tether
+
+### Google Fonts for custom fonts 
+
+Google fonts is using a custom font loader to avoid render blocking warnings from Google Page Speed Insights
 
 ## Usage
 
