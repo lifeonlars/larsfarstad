@@ -194,18 +194,10 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
+
 // Copy all the contents of main.css into head of file and replace link reference
 // Since this is a single page and UnCSS makes the CSS much smaller we can avoid
 // render blocking CSS by adding all the CSS to the head
-gulp.task('importCSS', function() {
-    return gulp.src('docs/*.html')
-        .pipe(replace(/<link rel=\"stylesheet\" href=\"\/styles\/main.css\"[^>]*>/, function(s) {
-            let style = fs.readFileSync('docs/styles/main.css', 'utf8');
-            return '<style>\n' + style + '\n</style>';
-        }))
-        .pipe(gulp.dest('docs/'));
-});
-
 gulp.task('inlinesource', function () {
     return gulp.src('docs/*.html')
         .pipe(inlineSource())

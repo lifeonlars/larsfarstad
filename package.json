@@ -27,7 +27,6 @@
     "gulp-inline-source": "~3.1.0",
     "gulp-load-plugins": "^1.2.4",
     "gulp-plumber": "^1.0.1",
-    "gulp-replace": "^0.5.4",
     "gulp-sass": "^3.0.0",
     "gulp-shell": "~0.6.3",
     "gulp-size": "^2.1.0",
