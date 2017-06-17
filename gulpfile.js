@@ -8,7 +8,6 @@ const runSequence = require('run-sequence');
 
 const inlineSource = require('gulp-inline-source');
 const	shell = require('gulp-shell');
-const replace = require('gulp-replace');
 const download = require('gulp-download');
 const fs = require('fs');
 
