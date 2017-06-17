@@ -438,15 +438,15 @@ let api = new Api(items);
 
 // As we'll be building and binding our own UI, we'll start with caching
 // references to any DOM elements we'll need to work with
-const controls  = document.querySelector('[data-ref="controls"]');
-const filters   = document.querySelectorAll('[data-ref="filter"]');
-const sorts     = document.querySelectorAll('[data-ref="sort"]');
-const container = document.querySelector('[data-ref="container"]');
+const controls        = document.querySelector('[data-ref="controls-skills"]');
+const filters         = document.querySelectorAll('[data-ref="filter"]');
+const sorts           = document.querySelectorAll('[data-ref="sort"]');
+const skillscontainer = document.querySelector('[data-ref="container-skills"]');
+
 
 // "Gap" elements are used to maintain even columns in a justified grid. See our
 // "MixItUp Grid Layouts" tutorial for more information.
 const firstGap = document.querySelector('[data-ref="first-gap"]');
-
 
 
 // We'll need to keep track of our active current filter so
@@ -454,11 +454,12 @@ const firstGap = document.querySelector('[data-ref="first-gap"]');
 let activeType = 'language';
 
 // Instantiate and configure the mixer
-let mixer;
+let skillsmixer;
+let worksmixer;
 
 api.get({ type: 'language' })
 .then( initialItems => {
-  mixer = mixitup(container, {
+  skillsmixer = mixitup(skillscontainer, {
     selectors: {
       target: '[data-ref="item"]'
     },
@@ -507,7 +508,7 @@ function handleButtonClick(button) {
   let sortBy = 'id';
   let order  = 'asc';
   // If button is already active, or an operation is in progress, ignore the click
-  if (button.classList.contains('control-active') || mixer.isMixing()) return;
+  if (button.classList.contains('control-active') || skillsmixer.isMixing()) return;
   // Else, check what type of button it is, if any
   if (button.matches('[data-ref="filter"]')) {
     // Filter button
@@ -531,7 +532,7 @@ function handleButtonClick(button) {
   .then(function(items) {
     // Our api returns an array of items which we can send
     // straight to our mixer using the .dataset() method
-    return mixer.dataset(items);
+    return skillsmixer.dataset(items);
   })
   .then(function(state) {
     console.log('fetched ' + state.activeDataset.length + ' items');
