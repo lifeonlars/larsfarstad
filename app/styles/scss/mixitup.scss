@@ -123,7 +123,7 @@
 
 } // .grid-container
 
-
+/* uncss:ignore */
 span[class^="proficiency-"] {
   display: block;
   border: 1px solid $teal;
@@ -133,6 +133,7 @@ span[class^="proficiency-"] {
   margin: 5px 30px;
   position: relative;
 }
+/* uncss:ignore */
 span[class^="proficiency-"]:before,
 span[class^="proficiency-"]:after,
 span[class^="proficiency-"] b::before,
@@ -145,6 +146,7 @@ span[class^="proficiency-"] b::after {
   height: 5px;
   width: 20%;
 }
+/* uncss:ignore */
 span.proficiency-1::before,
 span.proficiency-2::before,
 span.proficiency-3::before,
@@ -152,6 +154,7 @@ span.proficiency-4::before  {
   visibility: visible;
   left: 5%;
 }
+
 span.proficiency-2::after,
 span.proficiency-3::after,
 span.proficiency-4::after {
@@ -169,4 +172,5 @@ span.proficiency-4 b::after {
 }
 
 // If set to zero, then proficiency is irrelevant and should be hidden
+/* uncss:ignore */
 span.proficiency-0 { display: none; }
