@@ -15,7 +15,6 @@ const fs = require('fs');
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-
 let dev = true;
 
 gulp.task('styles', () => {
@@ -43,9 +42,12 @@ gulp.task('scripts', () => {
     .pipe(reload({stream: true}));
 });
 
+// Download latest version of analytics script and add to docs
+// This is so that we can serve analytics.js via our own CDN
+// and get a longer caching time than the default 2 hours
 gulp.task('get-analytics', function() {
   return download('https://www.google-analytics.com/analytics.js')
-    .pipe(gulp.dest('app/scripts/'));
+    .pipe(gulp.dest('docs/scripts/'));
 });
 
 
@@ -66,19 +68,18 @@ gulp.task('lint:test', () => {
     .pipe(gulp.dest('test/spec'));
 });
 
+// Note the change from /dist to /docs folder
+// this is done to work with Github pages
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
     .pipe($.if(/\.css$/, $.uncss({
       stylesheets: ['docs/styles/main.css'],
-      html: ['**/*.html'],
       ignore: [
-        '.control-active'
+        /\.control/
       ],
-      ignoreSheets : [
-        /googleapis/
-      ]
+      html: ['docs/*.html']
     })))
     .pipe($.if(/\.css$/, $.cssnano({safe: true, autoprefixer: false})))
     .pipe($.if(/\.html$/, $.htmlmin({
@@ -94,18 +95,21 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('docs'));
 });
 
+// Minify images and copy them to docs folder
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin()))
     .pipe(gulp.dest('docs/images'));
 });
 
+// Copy font files into tmp and dist/docs folder
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
     .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('docs/fonts')));
 });
 
+// Copy any additional files from root folder across that aren't html
 gulp.task('extras', () => {
   return gulp.src([
     'app/*',
@@ -115,6 +119,7 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('docs'));
 });
 
+// Delete contents of tmp folder prior to each serve
 gulp.task('clean', del.bind(null, ['.tmp']));
 
 gulp.task('serve', () => {
@@ -189,6 +194,9 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
+// Copy all the contents of main.css into head of file and replace link reference
+// Since this is a single page and UnCSS makes the CSS much smaller we can avoid
+// render blocking CSS by adding all the CSS to the head
 gulp.task('importCSS', function() {
     return gulp.src('docs/*.html')
         .pipe(replace(/<link rel=\"stylesheet\" href=\"\/styles\/main.css\"[^>]*>/, function(s) {
@@ -205,7 +213,7 @@ gulp.task('inlinesource', function () {
 });
 
 gulp.task('build', () => {
-  runSequence(['lint', 'html', 'images', 'fonts', 'extras'], ['inlinesource'], () => {
+  runSequence(['lint', 'html', 'images', 'fonts', 'get-analytics', 'extras'], ['inlinesource'], () => {
     return gulp.src('docs/**/*').pipe($.size({title: 'build', gzip: true}));
   });
 });
