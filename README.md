@@ -32,13 +32,14 @@ Since this is just a single page using inline-source adding the whole CSS to the
 * Bootstrap Scrollspy, Utils, Collapse
 * Tether
 
-JavaScript is currently very large for the little it does.
+JavaScript is currently very large for the little it does, needs serious refactoring.
 
 ### JavaScript Refactoring
 
 * Aim to completely get rid of jQuery as a dependency
 * All plugins and code in ES6
-* Replace Mixitup with a better alternative. Possibly consider writing a custom solution in ES6* 
+* Replace Mixitup with a better alternative. Possibly consider writing a custom solution in ES6
+* Consider moving skills JSON to external file 
 
 ### Google Fonts for custom fonts 
 
@@ -52,3 +53,5 @@ With the exception of the images and example work, feel free to use and adapt th
 ## TODO
 
 * Modal support for folio section  
+* Fix mobile menu
+* Re-organise and clean-up CSS
