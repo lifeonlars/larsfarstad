@@ -26,7 +26,7 @@ Since this is just a single page using inline-source adding the whole CSS to the
 ### JS/Plugins 
 
 * jQuery and jQuery easing
-* Mixitup for skills and folio listings
+* Mixitup for skills and folio listings (this is pretty large, consider refactoring to use something else)
 * Bootstrap Scrollspy, Utils, Collapse
 * Tether
 
