@@ -11,9 +11,7 @@ Live site: [larsfarstad.com](https://larsfarstad.com)
 * Use `gulp build` to create a production version 
 * To preview a production build run `gulp serve:dist`
 
-## What does it do
-
-### CSS 
+## CSS 
 
 CSS consists of some minimal custom CSS as well as parts of Bootstrap 4 (this can be customised depending on what you need)
 
@@ -23,12 +21,24 @@ CSS consists of some minimal custom CSS as well as parts of Bootstrap 4 (this ca
 
 Since this is just a single page using inline-source adding the whole CSS to the head won't matter and eliminates the **Avoid render blocking CSS** warnings from Google PageSpeed Insights.
 
-### JS/Plugins 
+**CSS Refactoring Goals**
+
+* Use minimal Bootstrap CSS (grid only?)
+
+## JS/Plugins 
 
 * jQuery and jQuery easing
 * Mixitup for skills and folio listings (this is pretty large, consider refactoring to use something else)
 * Bootstrap Scrollspy, Utils, Collapse
 * Tether
+
+JavaScript is currently very large for the little it does.
+
+### JavaScript Refactoring
+
+* Aim to completely get rid of jQuery as a dependency
+* All plugins and code in ES6
+* Replace Mixitup with a better alternative. Possibly consider writing a custom solution in ES6* 
 
 ### Google Fonts for custom fonts 
 
@@ -37,3 +47,8 @@ Google fonts is using a custom font loader to avoid render blocking warnings fro
 ## Usage
 
 With the exception of the images and example work, feel free to use and adapt the rest of the source code for your own purposes. 
+
+
+## TODO
+
+* Modal support for folio section  
