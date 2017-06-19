@@ -52,6 +52,8 @@ With the exception of the images and example work, feel free to use and adapt th
 
 ## TODO
 
+* Improve image compression gulp task (implement WebP compression with jpg fallback)
+* Add lazy loading to images
 * Modal support for folio section  
 * Content, design and layout for folio section (replacing current placeholders)
 * Fix mobile menu
