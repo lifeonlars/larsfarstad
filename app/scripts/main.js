@@ -144,14 +144,14 @@ const items = [
 },
 {
   id: 4,
-  proficiency: 1,
+  proficiency: 2,
   type: 'language',
   icon: 'typescript.svg',
   name: 'TypeScript'
 },
 {
   id: 5,
-  proficiency: 1,
+  proficiency: 2,
   type: 'language',
   icon: 'es6.svg',
   name: 'ES6/ES2015'
@@ -190,7 +190,7 @@ const items = [
 {
   id: 15,
   type: 'framework',
-  proficiency: 2,
+  proficiency: 3,
   icon: 'material.svg',
   name: 'Material Design'
 },
@@ -200,6 +200,20 @@ const items = [
   proficiency: 2,
   icon: 'ionic.svg',
   name: 'Ionic'
+},
+{
+  id: 17,
+  type: 'framework',
+  proficiency: 2,
+  icon: 'ngrx.svg',
+  name: 'NgRx'
+},
+{
+  id: 18,
+  type: 'framework',
+  proficiency: 2,
+  icon: 'rxjs.svg',
+  name: 'RxJS'
 },
 
 
@@ -352,7 +366,7 @@ const items = [
 {
   id: 42,
   type: 'service',
-  proficiency: 3,
+  proficiency: 2,
   icon: 'google-drive.svg',
   name: 'Google Drive'
 },
@@ -380,7 +394,7 @@ const items = [
 {
   id: 46,
   type: 'service',
-  proficiency: 2,
+  proficiency: 1,
   icon: 'cloudflare.svg',
   name: 'Cloudflare'
 },
@@ -393,13 +407,6 @@ const items = [
   proficiency: 0,
   icon: 'udemy.svg',
   name: 'Udemy'
-},
-{
-  id: 62,
-  type: 'learning',
-  proficiency: 0,
-  icon: 'codeschool.svg',
-  name: 'Code School'
 },
 {
   id: 63,

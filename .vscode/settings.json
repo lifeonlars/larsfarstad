@@ -3,7 +3,7 @@
     "workbench.colorTheme": "Material Theme",
     "typescript.check.tscVersion": false,
     "workbench.iconTheme": "material-icon-theme",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "files.trimTrailingWhitespace": true,
     "typescriptHero.resolver.pathStringDelimiter": "'",
     "editor.tabSize": 2
